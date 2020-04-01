@@ -4,7 +4,6 @@ const exampleAdditionInput = {
   operation: 'add',
 }
 
-
 const addition1 = { 
   num1:1,
   num2:2,
@@ -20,11 +19,47 @@ const multiplication1 = {
   num2:3,
   operand: 'multiply'
 }
-
 const division1 = {
   num1:3,
   num2:3,
   operand: 'divide'
+}
+const addition2 = { 
+  num1:1,
+  num2:2,
+  operand: '+'  
+}
+const subtraction2 = { 
+  num1:5,
+  num2:2,
+  operand: '-'  
+}
+const multiplication2 = {
+  num1:3,
+  num2:3,
+  operand: '*'
+}
+
+const division2 = {
+  num1:3,
+  num2:3,
+  operand: '/'
+}
+
+const erreneous1 = {
+  num2:2,
+  operand: '+'
+}
+
+const erreneous2 = {
+  num1:5,
+  num2:0,
+  operand: '/'
+}
+const erreneous3 = {
+  num1:"hotdog",
+  num2:"elephant",
+  operand:"add"
 }
 
 
@@ -48,15 +83,6 @@ const divide = function (object) {
   return ` ${object.num1} / ${object.num2} = ` + (object.num1 / object.num2);
 }
 
-
-
-
-
-console.log(add(addition1));
-console.log(subtract(subtraction1));
-console.log(multiply(multiplication1));
-console.log(divide(division1));
-
 const calculate = function(object) {
 if ( isNaN(object.num1)|| isNaN(object.num2) ||
  !["+", "add","*","multiply","-","subtract","/","divide"].includes(object.operand)  
@@ -69,16 +95,26 @@ if ( isNaN(object.num1)|| isNaN(object.num2) ||
     } else if (object.operand === '*' || object.operand === 'multiply'){
     return multiply(object);
     } else if (object.operand === '/' || object.operand === 'divide'){
-    return divide(object);
+      if (object.num2 === 0){
+        return "Can't divide by zero! Try again!"
+      } else {
+      return divide(object);
+      }
     }
   }
-
 }
 
 console.log(calculate(addition1));
 console.log(calculate(subtraction1));
 console.log(calculate(multiplication1));
 console.log(calculate(division1));
+console.log(calculate(addition2));
+console.log(calculate(subtraction2));
+console.log(calculate(multiplication2));
+console.log(calculate(division2));
+console.log(calculate(erreneous1));
+console.log(calculate(erreneous2));
+console.log(calculate(erreneous3));
 
 
 
