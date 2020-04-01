@@ -1,3 +1,6 @@
+const prompt = require('prompt');
+
+
 const exampleAdditionInput = {
   num1: 3,
   num2: 5,
@@ -104,18 +107,43 @@ if ( isNaN(object.num1)|| isNaN(object.num2) ||
   }
 }
 
-console.log(calculate(addition1));
-console.log(calculate(subtraction1));
-console.log(calculate(multiplication1));
-console.log(calculate(division1));
-console.log(calculate(addition2));
-console.log(calculate(subtraction2));
-console.log(calculate(multiplication2));
-console.log(calculate(division2));
-console.log(calculate(erreneous1));
-console.log(calculate(erreneous2));
-console.log(calculate(erreneous3));
+// console.log(calculate(addition1));
+// console.log(calculate(subtraction1));
+// console.log(calculate(multiplication1));
+// console.log(calculate(division1));
+// console.log(calculate(addition2));
+// console.log(calculate(subtraction2));
+// console.log(calculate(multiplication2));
+// console.log(calculate(division2));
+// console.log(calculate(erreneous1));
+// console.log(calculate(erreneous2));
+// console.log(calculate(erreneous3));
 
 
 
+const calculateUserInput = function(error, promptInput) {
+  console.log('These are the values you entered: ', promptInput);
+  console.log("the result is: ", calculate(promptInput));
+  console.log("Thank you for using the calculator!")
+}  
+
+// const moreCalcualtions = function(error, promptInput2) {
+//   switch(promptInput2.response) {
+//     case "yes":
+//       console.log("Ok! let's keep going");
+//       prompt.start();
+//       console.log("Welcome to the Cli Calculator");
+//       console.log("please enter two numbers, followed by an operation");
+//       prompt.get(['num1','num2','operand'], calculateUserInput);
+//       break;
+//     case "no":
+//       console.log("I am not Thank you for using the calculator!");
+//       break;
+//   }
+// } 
+
+prompt.start();
+console.log("Welcome to the Cli Calculator");
+console.log("please enter two numbers, followed by an operation");
+prompt.get(['num1','num2','operand'], calculateUserInput);
 
