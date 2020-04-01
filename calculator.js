@@ -127,21 +127,6 @@ const calculateUserInput = function(error, promptInput) {
   console.log("Thank you for using the calculator!")
 }  
 
-// const moreCalcualtions = function(error, promptInput2) {
-//   switch(promptInput2.response) {
-//     case "yes":
-//       console.log("Ok! let's keep going");
-//       prompt.start();
-//       console.log("Welcome to the Cli Calculator");
-//       console.log("please enter two numbers, followed by an operation");
-//       prompt.get(['num1','num2','operand'], calculateUserInput);
-//       break;
-//     case "no":
-//       console.log("I am not Thank you for using the calculator!");
-//       break;
-//   }
-// } 
-
 prompt.start();
 console.log("Welcome to the Cli Calculator");
 console.log("please enter two numbers, followed by an operation");
